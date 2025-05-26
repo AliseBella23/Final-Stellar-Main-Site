@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Stellar Reverb</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Tomorrow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gallery Page Specific Styles */
+        .gallery-header {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .gallery-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, var(--color-dark-nebula), var(--color-black));
+        }
+        
+        .stars-animated {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(white 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            animation: stars-drift 100s linear infinite;
+        }
+        
+        @keyframes stars-drift {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+        
+        .gallery-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gallery-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .gallery-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            opacity: 0.8;
+        }
+        
+        .gallery-grid-section {
+            padding: 50px 0 100px;
+            position: relative;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--color-cyan), var(--color-magenta));
+            opacity: 0.2;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 0.4;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+            z-index: 2;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--color-white);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-title-small {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--color-cyan);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .gallery-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-caption {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--color-cyan);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .modal-description {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: var(--color-magenta);
+            transform: rotate(90deg);
+        }
+        
+        @media (max-width: 1199px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="capsule-event-horizon.html">Capsules</a></li>
+                    <li><a href="lore.html">Lore</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Gallery Header Section -->
+        <section class="gallery-header">
+            <div class="gallery-background">
+                <div class="stars-animated"></div>
+            </div>
+            <div class="gallery-content">
+                <h2 class="gallery-title glitch-text" data-text="TRANSMISSION GALLERY">TRANSMISSION GALLERY</h2>
+                <p class="gallery-subtitle">VISUAL FREQUENCIES</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Section -->
+        <section class="gallery-grid-section">
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item" data-id="1">
+                        <img src="images/products/black-hole-mixtape-tee.jpeg" alt="Black Hole Mixtape" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Black Hole Mixtape</h3>
+                            <p class="gallery-description">A diagram of a dying star rendered in cassette runes.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item" data-id="2">
+                        <img src="images/products/gravitational-vu-control.jpeg" alt="Gravitational VU Control" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Gravitational VU Control</h3>
+                            <p class="gallery-description">Neon redline from deep-space reverb. Operatic static worship.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item" data-id="3">
+                        <img src="images/products/cassette-fragment-relic.png" alt="Cassette Fragment Relic" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Cassette Fragment Relic</h3>
+                            <p class="gallery-description">Magnetic, torn, divine. A relic from a dead analog god.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item" data-id="4">
+                        <img src="images/backgrounds/cosmic-cassette.png" alt="Cosmic Cassette" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Cosmic Cassette</h3>
+                            <p class="gallery-description">Transmission medium from beyond the void.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item" data-id="5">
+                        <img src="images/backgrounds/capsule-001-cassette.png" alt="Capsule 001 Cassette" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Capsule 001 Cassette</h3>
+                            <p class="gallery-description">The first transmission vessel from the event horizon.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 6 -->
+                    <div class="gallery-item" data-id="6">
+                        <img src="images/design/black-hole-mixtape-promo.jpeg" alt="Black Hole Mixtape Promo" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title-small">Black Hole Mixtape Promo</h3>
+                            <p class="gallery-description">Track 1: Collapse. The first signal from beyond.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Modal -->
+        <div class="gallery-modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <img src="" alt="" class="modal-image">
+                <div class="modal-caption">
+                    <h3 class="modal-title"></h3>
+                    <p class="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h2>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="capsule-event-horizon.html">Capsules</a></li>
+                        <li><a href="lore.html">Lore</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stellar Reverb. All transmissions reserved.</p>
+            </div>
+        </div>
+        <div class="reverb-waves"></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = document.querySelector('.gallery-modal');
+            const modalImage = document.querySelector('.modal-image');
+            const modalTitle = document.querySelector('.modal-title');
+            const modalDescription = document.querySelector('.modal-description');
+            const modalClose = document.querySelector('.modal-close');
+            
+            // Open modal when gallery item is clicked
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const image = this.querySelector('.gallery-image');
+                    const title = this.querySelector('.gallery-title-small');
+                    const description = this.querySelector('.gallery-description');
+                    
+                    modalImage.src = image.src;
+                    modalImage.alt = image.alt;
+                    modalTitle.textContent = title.textContent;
+                    modalDescription.textContent = description.textContent;
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close modal when close button is clicked
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
