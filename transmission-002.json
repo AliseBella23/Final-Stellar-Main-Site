@@ -1,0 +1,22 @@
+{
+  "transmission_title": "Transmission 002: Echoes From The Simulation",
+  "transmission_subtitle": "Reality Glitches",
+  "transmission_lore": "Somewhere past the Singularity, where time loops and particles forget their place, the second Stellar Reverb transmission hums with distorted clarity. Echoes leak from a broken simulation\u2014pixels drip, laws of physics flicker, and logic shivers under cosmic load. The cassettes, still breathing with static, whisper forbidden truths with every warped click.\n\nIs this the real world\u2014or just playback from a corrupted memory bank?\n\nPrepare for a decoding of unreality. This is not a transmission. It\u2019s a rupture.",
+  "artworks": [
+    {
+      "title": "Glitch Cathedral",
+      "prompt": "A neon cathedral constructed of shifting pixels and fractured code, glowing with crimson static and hovering cassettes. The stars above flicker like a broken screen. Cybernetic monks chant in binary.",
+      "vibe": "surreal, glitchwave, divine"
+    },
+    {
+      "title": "Echo Loop Shaman",
+      "prompt": "A hooded figure sits inside a VHS vortex, surrounded by looping holograms of cassette reels. His hands conduct corrupted waveforms that ripple across reality. Symbols phase in and out on his cloak.",
+      "vibe": "mystic, corrupted, analog digital fusion"
+    },
+    {
+      "title": "Reality Fracture Field",
+      "prompt": "A field of cassette towers cracked down the middle, bleeding blue and red simulation fragments. Sky glitching into polygon clouds. Glowing soundwaves pulse from broken speakers.",
+      "vibe": "chaotic, cinematic, unraveling"
+    }
+  ]
+}
