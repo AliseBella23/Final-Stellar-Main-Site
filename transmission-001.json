@@ -1,0 +1,32 @@
+{
+  "capsule_id": "transmission-001",
+  "title": "Transmission 001: On The Event Horizon",
+  "lore": "Reality fractures at the edge of collapse. Sound distorts time. Memory loops through magnetic tape. This inaugural transmission captures the instant before surrender \u2014 when analog gods rise, spectral signals drift, and fractured frequencies echo from the abyss. Welcome to the threshold. This is where the myth begins.",
+  "prompts": [
+    {
+      "title": "Concept 1: Placeholder Title",
+      "description": "Placeholder description for concept 1.",
+      "prompt": "Placeholder visual prompt 1 with cosmic elements and surreal styling."
+    },
+    {
+      "title": "Concept 2: Placeholder Title",
+      "description": "Placeholder description for concept 2.",
+      "prompt": "Placeholder visual prompt 2 with cosmic elements and surreal styling."
+    },
+    {
+      "title": "Concept 3: Placeholder Title",
+      "description": "Placeholder description for concept 3.",
+      "prompt": "Placeholder visual prompt 3 with cosmic elements and surreal styling."
+    },
+    {
+      "title": "Concept 4: Placeholder Title",
+      "description": "Placeholder description for concept 4.",
+      "prompt": "Placeholder visual prompt 4 with cosmic elements and surreal styling."
+    },
+    {
+      "title": "Concept 5: Placeholder Title",
+      "description": "Placeholder description for concept 5.",
+      "prompt": "Placeholder visual prompt 5 with cosmic elements and surreal styling."
+    }
+  ]
+}
