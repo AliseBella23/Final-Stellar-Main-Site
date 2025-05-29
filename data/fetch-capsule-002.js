@@ -1,4 +1,4 @@
-fetch('./data/transmission-001.json')
+fetch('../data/transmission-002.json')
   .then(response => response.json())
   .then(data => {
     const loreContainer = document.querySelector('#capsule-lore');

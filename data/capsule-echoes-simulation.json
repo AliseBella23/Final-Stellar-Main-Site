@@ -1,0 +1,18 @@
+{
+  "capsule_id": "transmission-002",
+  "title": "Transmission 002: Echoes From The Simulation",
+  "lore": "They told us reality was stable. But since the Singularity, patterns are... off. Street signs melt into code. Conversations loop. This is no longer physics—it's playback. And someone hit rewind.",
+  "prompts": [
+    {
+      "title": "Concept 1: Glitched Reflection",
+      "description": "A mirror that reflects your digital self instead of your physical form.",
+      "prompt": "A glowing mirror in a neon-lit void, reflecting a fractured, pixelated humanoid composed of code and static. Glitch aesthetics, surreal lighting, black and chrome tones."
+    },
+    {
+      "title": "Concept 2: Broken Sim HUD",
+      "description": "A heads-up display overlays reality with corrupted interface data.",
+      "prompt": "Futuristic HUD UI glitched and bleeding into reality. Floating error messages, distorted AR elements over a neon city skyline, black background with magenta and blue glitch overlays."
+    }
+    // Add more here...
+  ]
+}

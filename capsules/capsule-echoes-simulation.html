@@ -1,0 +1,78 @@
+<!-- Sample HTML Section for Capsule Layout -->
+<section class="capsule-transmissions">
+  <h2>Capsule Transmissions</h2>
+  <div class="capsule-list">
+
+    <!-- Main Storyline Capsule -->
+    <div class="capsule-item main-arc">
+      <div class="capsule-header">
+        <span class="capsule-id">Capsule 1</span>
+        <span class="capsule-type main">Main Storyline</span>
+      </div>
+      <h3>“On The Event Horizon” Transmission</h3>
+      <p class="capsule-desc">The beginning of collapse. Where sound fractures time and the myth begins.</p>
+    </div>
+
+    <!-- Main Storyline Capsule -->
+    <div class="capsule-item main-arc">
+      <div class="capsule-header">
+        <span class="capsule-id">Capsule 2</span>
+        <span class="capsule-type main">Main Storyline</span>
+      </div>
+      <h3>“Echoes From The Simulation”</h3>
+      <p class="capsule-desc">Glitches ripple outward. Something artificial is breaking through the signal.</p>
+    </div>
+
+    <!-- Bonus / Off-Series Capsule -->
+    <div class="capsule-item side-transmission">
+      <div class="capsule-header">
+        <span class="capsule-id">Classified</span>
+        <span class="capsule-type side">Declassified Drop</span>
+      </div>
+      <h3>“Ghosts In The Tape”</h3>
+      <p class="capsule-desc">Haunted echoes from dead channels, buried in analog decay.</p>
+    </div>
+
+    <!-- Glitch Teaser for Capsule 3 -->
+    <div class="capsule-item teaser-glitch">
+      <div class="capsule-header">
+        <span class="capsule-id">Capsule 3</span>
+        <span class="capsule-type main">Main Storyline</span>
+      </div>
+      <h3 class="glitch-text">“Past The Singu<span class="glitch-glow">larity”</span></h3>
+      <p class="capsule-desc">/// SIGNAL LOST ///</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS Styling (Include in stylesheet) -->
+<style>
+  .capsule-transmissions {
+    padding: 2rem;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Orbitron', monospace;
+  }
+  .capsule-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid;
+    transition: all 0.3s ease-in-out;
+  }
+  .main-arc { border-color: #ae81ff; background: rgba(174, 129, 255, 0.1); }
+  .side-transmission { border-color: #f92672; background: rgba(249, 38, 114, 0.1); }
+  .teaser-glitch { border-color: #66d9ef; background: rgba(102, 217, 239, 0.05); }
+  .capsule-header { display: flex; justify-content: space-between; font-size: 0.9rem; opacity: 0.7; }
+  .glitch-text { position: relative; animation: glitch 2s infinite alternate; }
+  .glitch-glow { color: #ff79c6; text-shadow: 0 0 5px #ff79c6; }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(1px, -1px); }
+    40% { transform: translate(-1px, 1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(-1px, -1px); }
+    100% { transform: translate(0); }
+  }
+</style>
