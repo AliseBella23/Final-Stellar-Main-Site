@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmission 002: Echoes From The Simulation</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <main class="capsule-container">
+    <section id="capsule-lore" class="capsule-lore"></section>
+    <section id="prompt-gallery" class="prompt-gallery"></section>
+  </main>
+
+  <script>
+    fetch('../data/transmission-002.json')
+      .then(response => response.json())
+      .then(data => {
+        const loreContainer = document.querySelector('#capsule-lore');
+        const promptGallery = document.querySelector('#prompt-gallery');
+
+        // Inject the lore
+        if (loreContainer) {
+          loreContainer.innerHTML = `
+            <h2>${data.title}</h2>
+            <p>${data.lore}</p>
+          `;
+        }
+
+        // Inject each prompt into the gallery
+        if (promptGallery) {
+          data.prompts.forEach(prompt => {
+            const promptCard = document.createElement('div');
+            promptCard.classList.add('prompt-card');
+            promptCard.innerHTML = `
+              <h3>${prompt.title}</h3>
+              <p>${prompt.description}</p>
+              <code>${prompt.prompt}</code>
+            `;
+            promptGallery.appendChild(promptCard);
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error loading capsule data:', error);
+      });
+  </script>
+</body>
+</html>
