@@ -1,0 +1,7 @@
+# macOS system files
+.DS_Store
+
+# Node / build / logs (if you use any tools later)
+node_modules/
+dist/
+*.log
