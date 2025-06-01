@@ -1,78 +1,86 @@
-<!-- Sample HTML Section for Capsule Layout -->
-<section class="capsule-transmissions">
-  <h2>Capsule Transmissions</h2>
-  <div class="capsule-list">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transmission 002 – Echoes From The Simulation</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Tomorrow:wght@300;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  <div class="scanlines"></div>
 
-    <!-- Main Storyline Capsule -->
-    <div class="capsule-item main-arc">
-      <div class="capsule-header">
-        <span class="capsule-id">Capsule 1</span>
-        <span class="capsule-type main">Main Storyline</span>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h1>
       </div>
-      <h3>“On The Event Horizon” Transmission</h3>
-      <p class="capsule-desc">The beginning of collapse. Where sound fractures time and the myth begins.</p>
+      <nav>
+        <div class="menu-toggle">
+          <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="capsule-event-horizon.html">Capsules</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Main Storyline Capsule -->
-    <div class="capsule-item main-arc">
-      <div class="capsule-header">
-        <span class="capsule-id">Capsule 2</span>
-        <span class="capsule-type main">Main Storyline</span>
+  <main>
+    <section class="capsule-header">
+      <div class="capsule-background">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="capsule-icon">
+          <img src="images/backgrounds/capsule-002-glitch.png" alt="Capsule 002" class="glitch-image"/>
+        </div>
       </div>
-      <h3>“Echoes From The Simulation”</h3>
-      <p class="capsule-desc">Glitches ripple outward. Something artificial is breaking through the signal.</p>
-    </div>
-
-    <!-- Bonus / Off-Series Capsule -->
-    <div class="capsule-item side-transmission">
-      <div class="capsule-header">
-        <span class="capsule-id">Classified</span>
-        <span class="capsule-type side">Declassified Drop</span>
+      <div class="capsule-content">
+        <h2 class="capsule-title glitch-text" data-text="TRANSMISSION 002 – ECHOES FROM THE SIMULATION">TRANSMISSION 002 – ECHOES FROM THE SIMULATION</h2>
+        <p class="capsule-subtitle">A signal distorted by illusion and fractured code</p>
       </div>
-      <h3>“Ghosts In The Tape”</h3>
-      <p class="capsule-desc">Haunted echoes from dead channels, buried in analog decay.</p>
-    </div>
+    </section>
 
-    <!-- Glitch Teaser for Capsule 3 -->
-    <div class="capsule-item teaser-glitch">
-      <div class="capsule-header">
-        <span class="capsule-id">Capsule 3</span>
-        <span class="capsule-type main">Main Storyline</span>
+    <section class="capsule-lore" id="capsule-lore">
+      <!-- Dynamic lore content will be injected here -->
+    </section>
+
+    <section class="prompt-gallery-section">
+      <div class="container" id="prompt-gallery">
+        <!-- Dynamic prompt cards will be injected here -->
       </div>
-      <h3 class="glitch-text">“Past The Singu<span class="glitch-glow">larity”</span></h3>
-      <p class="capsule-desc">/// SIGNAL LOST ///</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h2>
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="capsule-event-horizon.html">Capsules</a></li>
+            <li><a href="lore.html">Lore</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stellar Reverb. All transmissions reserved.</p>
+      </div>
     </div>
+    <div class="reverb-waves"></div>
+  </footer>
 
-  </div>
-</section>
-
-<!-- CSS Styling (Include in stylesheet) -->
-<style>
-  .capsule-transmissions {
-    padding: 2rem;
-    background-color: #0a0a0a;
-    color: #fff;
-    font-family: 'Orbitron', monospace;
-  }
-  .capsule-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-left: 4px solid;
-    transition: all 0.3s ease-in-out;
-  }
-  .main-arc { border-color: #ae81ff; background: rgba(174, 129, 255, 0.1); }
-  .side-transmission { border-color: #f92672; background: rgba(249, 38, 114, 0.1); }
-  .teaser-glitch { border-color: #66d9ef; background: rgba(102, 217, 239, 0.05); }
-  .capsule-header { display: flex; justify-content: space-between; font-size: 0.9rem; opacity: 0.7; }
-  .glitch-text { position: relative; animation: glitch 2s infinite alternate; }
-  .glitch-glow { color: #ff79c6; text-shadow: 0 0 5px #ff79c6; }
-  
-  @keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(1px, -1px); }
-    40% { transform: translate(-1px, 1px); }
-    60% { transform: translate(1px, 1px); }
-    80% { transform: translate(-1px, -1px); }
-    100% { transform: translate(0); }
-  }
-</style>
+  <script src="js/main.js"></script>
+  <script src="js/fetch-capsule.js"></script>
+</body>
+</html>
