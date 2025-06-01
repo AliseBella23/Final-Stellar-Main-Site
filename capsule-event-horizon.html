@@ -1,183 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capsule 001 | Stellar Reverb</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Tomorrow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capsule 001 | Stellar Reverb</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Tomorrow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Preload key image -->
+  <link rel="preload" as="image" href="images/backgrounds/capsule-001-cassette.png" />
 </head>
 <body>
-    <div class="noise-overlay"></div>
-    <div class="scanlines"></div>
-    
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h1>
-            </div>
-            <nav>
-                <div class="menu-toggle">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="capsule-event-horizon.html" class="active">Capsules</a></li>
-                    <li><a href="lore.html">Lore</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </nav>
+  <div class="noise-overlay"></div>
+  <div class="scanlines"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h1>
+      </div>
+      <nav>
+        <div class="menu-toggle">
+          <div class="hamburger">
+            <span></span><span></span><span></span>
+          </div>
         </div>
-    </header>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="capsule-event-horizon.html" class="active">Capsules</a></li>
+          <li><a href="lore.html">Lore</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <!-- Capsule Header Section -->
-        <section class="capsule-header">
-            <div class="capsule-background">
-                <div class="stars"></div>
-                <div class="nebula"></div>
-                <div class="capsule-icon">
-                    <img src="images/backgrounds/capsule-001-cassette.png" alt="Capsule 001 Cassette" class="glitch-image">
-                </div>
-            </div>
-            <div class="capsule-content">
-                <h2 class="capsule-title glitch-text" data-text="TRANSMISSION 001 – ON THE EVENT HORIZON">TRANSMISSION 001 – ON THE EVENT HORIZON</h2>
-                <p class="capsule-subtitle">A signal from the void where analog meets eternity</p>
-            </div>
-        </section>
-
-        <!-- Product Grid Section -->
-        <section class="product-detail">
-            <div class="container">
-                <div class="product-grid detailed">
-                    <!-- Product 1 -->
-                    <div class="product-card detailed" id="black-hole-mixtape">
-                        <div class="product-image">
-                            <img src="images/products/black-hole-mixtape-tee.jpeg" alt="Black Hole Mixtape Tee">
-                            <div class="product-overlay"></div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title glow-text">Black Hole Mixtape Tee</h3>
-                            <p class="product-description">Track 1: Collapse. A diagram of a dying star rendered in cassette runes. The final transmission before the event horizon, captured in analog form. This tee carries the weight of cosmic collapse in every thread.</p>
-                            <div class="product-meta">
-                                <span class="product-price">$45.00</span>
-                                <span class="product-availability">Limited Transmission</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-card detailed" id="gravitational-vu">
-                        <div class="product-image">
-                            <img src="images/products/gravitational-vu-control.jpeg" alt="Gravitational VU Control">
-                            <div class="product-overlay"></div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title glow-text">Gravitational VU Control</h3>
-                            <p class="product-description">Neon redline from deep-space reverb. Operatic static worship. The cosmic tree of sound, branches reaching into the void, roots deep in analog soil. Each note a star, each frequency a galaxy unto itself.</p>
-                            <div class="product-meta">
-                                <span class="product-price">$45.00</span>
-                                <span class="product-availability">Limited Transmission</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-card detailed" id="cassette-fragment">
-                        <div class="product-image">
-                            <img src="images/products/cassette-fragment-relic.png" alt="Cassette Fragment Relic">
-                            <div class="product-overlay"></div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title glow-text">Cassette Fragment Relic</h3>
-                            <p class="product-description">Magnetic, torn, divine. A relic from a dead analog god. The cosmic traveler holds the sacred artifact, a fragment of forgotten technology that bridges dimensions. Wear this transmission to connect with the signal beyond.</p>
-                            <div class="product-meta">
-                                <span class="product-price">$45.00</span>
-                                <span class="product-availability">Limited Transmission</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Transmission Info Section -->
-        <section class="transmission-info">
-            <div class="container">
-                <div class="transmission-content">
-                    <h2 class="section-title glitch-text" data-text="ABOUT THIS TRANSMISSION">ABOUT THIS TRANSMISSION</h2>
-                    <div class="transmission-details">
-                        <div class="transmission-text">
-                            <p>Capsule 001 – "On The Event Horizon" marks the first transmission from the void. These artifacts were discovered at the edge of a collapsing star system, their magnetic patterns containing fragments of a forgotten civilization's final broadcast.</p>
-                            <p>Each piece carries a unique frequency signature, detectable only by those attuned to the cosmic wavelength. The signal seekers who recovered these relics reported strange dreams and occasional static interference in electronic devices nearby.</p>
-                            <p>This limited transmission will not be repeated. Once these artifacts find their hosts, the signal moves forward to the next phase.</p>
-                        </div>
-                        <div class="transmission-meta">
-                            <div class="meta-item">
-                                <h4>Signal Origin</h4>
-                                <p>NGC-4151 Outer Rim</p>
-                            </div>
-                            <div class="meta-item">
-                                <h4>Transmission Date</h4>
-                                <p>05.25.2025</p>
-                            </div>
-                            <div class="meta-item">
-                                <h4>Signal Strength</h4>
-                                <div class="waveform">
-                                    <span></span><span></span><span></span><span></span><span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="vhs-tracking"></div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h2>
-                </div>
-                <div class="footer-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="capsule-event-horizon.html">Capsules</a></li>
-                        <li><a href="lore.html">Lore</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Stellar Reverb. All transmissions reserved.</p>
-            </div>
+  <!-- Capsule Header -->
+  <main>
+    <section class="capsule-header">
+      <div class="capsule-background">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="capsule-icon">
+          <img src="images/backgrounds/capsule-001-cassette.png" alt="Capsule 001 Cassette" class="glitch-image" />
         </div>
-        <div class="reverb-waves"></div>
-    </footer>
+      </div>
+      <div class="capsule-content">
+        <h2 class="capsule-title glitch-text" data-text="TRANSMISSION 001 – ON THE EVENT HORIZON">TRANSMISSION 001 – ON THE EVENT HORIZON</h2>
+        <p class="capsule-subtitle">A signal from the void where analog meets eternity</p>
+      </div>
+    </section>
 
-    <script src="js/main.js"></script>
-<script src="./js/fetch-capsule.js"></script>
+    <!-- Capsule Lore + Prompts -->
+    <section class="capsule-lore">
+      <div class="container">
+        <div id="capsule-lore"></div>
+        <div id="prompt-gallery" class="prompt-gallery"></div>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-grid detailed">
+
+          <!-- Product 1 -->
+          <div class="product-card detailed" id="black-hole-mixtape">
+            <div class="product-image">
+              <img src="images/products/black-hole-mixtape-tee.jpeg" alt="Black Hole Mixtape Tee" />
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title glow-text">Black Hole Mixtape Tee</h3>
+              <p class="product-description">Track 1: Collapse. A diagram of a dying star rendered in cassette runes. The final transmission before the event horizon, captured in analog form. This tee carries the weight of cosmic collapse in every thread.</p>
+              <div class="product-meta">
+                <span class="product-price">$45.00</span>
+                <span class="product-availability">Limited Transmission</span>
+              </div>
+              <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card detailed" id="gravitational-vu">
+            <div class="product-image">
+              <img src="images/products/gravitational-vu-control.jpeg" alt="Gravitational VU Control" />
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title glow-text">Gravitational VU Control</h3>
+              <p class="product-description">Neon redline from deep-space reverb. Operatic static worship. The cosmic tree of sound, branches reaching into the void, roots deep in analog soil. Each note a star, each frequency a galaxy unto itself.</p>
+              <div class="product-meta">
+                <span class="product-price">$45.00</span>
+                <span class="product-availability">Limited Transmission</span>
+              </div>
+              <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card detailed" id="cassette-fragment">
+            <div class="product-image">
+              <img src="images/products/cassette-fragment-relic.png" alt="Cassette Fragment Relic" />
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title glow-text">Cassette Fragment Relic</h3>
+              <p class="product-description">Magnetic, torn, divine. A relic from a dead analog god. The cosmic traveler holds the sacred artifact, a fragment of forgotten technology that bridges dimensions. Wear this transmission to connect with the signal beyond.</p>
+              <div class="product-meta">
+                <span class="product-price">$45.00</span>
+                <span class="product-availability">Limited Transmission</span>
+              </div>
+              <a href="#" class="btn btn-primary">Enter Transmission Chamber</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Transmission Info -->
+    <section class="transmission-info">
+      <div class="container">
+        <div class="transmission-content">
+          <h2 class="section-title glitch-text" data-text="ABOUT THIS TRANSMISSION">ABOUT THIS TRANSMISSION</h2>
+          <div class="transmission-details">
+            <div class="transmission-text">
+              <p>Capsule 001 – "On The Event Horizon" marks the first transmission from the void. These artifacts were discovered at the edge of a collapsing star system, their magnetic patterns containing fragments of a forgotten civilization's final broadcast.</p>
+              <p>Each piece carries a unique frequency signature, detectable only by those attuned to the cosmic wavelength. The signal seekers who recovered these relics reported strange dreams and occasional static interference in electronic devices nearby.</p>
+              <p>This limited transmission will not be repeated. Once these artifacts find their hosts, the signal moves forward to the next phase.</p>
+            </div>
+            <div class="transmission-meta">
+              <div class="meta-item">
+                <h4>Signal Origin</h4>
+                <p>NGC-4151 Outer Rim</p>
+              </div>
+              <div class="meta-item">
+                <h4>Transmission Date</h4>
+                <p>05.25.2025</p>
+              </div>
+              <div class="meta-item">
+                <h4>Signal Strength</h4>
+                <div class="waveform">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vhs-tracking"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2 class="glitch-text" data-text="STELLAR REVERB">STELLAR REVERB</h2>
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="capsule-event-horizon.html">Capsules</a></li>
+            <li><a href="lore.html">Lore</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <!-- social icons here -->
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stellar Reverb. All transmissions reserved.</p>
+      </div>
+    </div>
+    <div class="reverb-waves"></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="scripts/fetch.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const transmissionId = match[1];
-  const jsonPath = `./transmission-${transmissionId}.json`;
+  const jsonPath = `./data/transmission-${transmissionId}.json`; // Updated path
 
   fetch(jsonPath)
     .then(response => {
