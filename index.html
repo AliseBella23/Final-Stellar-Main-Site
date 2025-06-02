@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stellar Reverb</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product-card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .product-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -25,6 +61,25 @@
     <section>
       <h2>Welcome to Stellar Reverb</h2>
       <p>Explore transmissions from the edge of time, where sound becomes story.</p>
+    </section>
+
+    <!-- ✅ Product Grid Section -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="images/products/capsule001-product2.png" alt="Capsule 001 T-Shirt">
+        <h3>Capsule 001</h3>
+        <p>On The Event Horizon</p>
+      </div>
+      <div class="product-card">
+        <img src="images/products/capsule002-product3.png" alt="Capsule 002 T-Shirt">
+        <h3>Capsule 002</h3>
+        <p>Echoes From The Simulation</p>
+      </div>
+      <div class="product-card">
+        <img src="images/products/capsule003-product1.png" alt="Capsule 003 T-Shirt">
+        <h3>Capsule 003</h3>
+        <p>The Feedback Tower</p>
+      </div>
     </section>
   </main>
 
