@@ -120,5 +120,45 @@ button:focus {
   box-shadow: var(--glow-purple);
   margin-bottom: 1rem;
 }
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
 
+.product-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: var(--glow-cyan);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow-magenta);
+}
+
+.product-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #ccc;
+}
 /* Insert all previous styles here unchanged... */
