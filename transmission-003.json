@@ -1,0 +1,16 @@
+{
+  "title": "Transmission 003 – [Capsule Name Here]",
+  "lore": "This capsule explores...",
+  "prompts": [
+    {
+      "title": "Prompt Title 1",
+      "description": "Visual description of the prompt",
+      "prompt": "Actual prompt here"
+    },
+    {
+      "title": "Prompt Title 2",
+      "description": "Another visual description",
+      "prompt": "Another prompt here"
+    }
+  ]
+}
