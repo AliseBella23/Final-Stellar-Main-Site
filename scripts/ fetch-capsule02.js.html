@@ -1,0 +1,38 @@
+// fetch-capsule02.js — for Transmission 002 (Echoes From The Simulation)
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('./data/transmission-002.json')
+    .then(response => {
+      if (!response.ok) throw new Error("Failed to load JSON");
+      return response.json();
+    })
+    .then(data => {
+      const loreContainer = document.querySelector('#capsule-lore');
+      const promptGallery = document.querySelector('#prompt-gallery');
+
+      // Inject title + subtitle + lore
+      if (loreContainer) {
+        loreContainer.innerHTML = `
+          <h2>${data.transmission_title}</h2>
+          <h3>${data.transmission_subtitle}</h3>
+          <p>${data.transmission_lore}</p>
+        `;
+      }
+
+      // Inject artworks (prompts)
+      if (promptGallery) {
+        data.artworks.forEach(art => {
+          const card = document.createElement('div');
+          card.classList.add('prompt-card');
+          card.innerHTML = `
+            <h3>${art.title}</h3>
+            <p><strong>Vibe:</strong> ${art.vibe}</p>
+            <code>${art.prompt}</code>
+          `;
+          promptGallery.appendChild(card);
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Error loading Transmission 002 data:', error);
+    });
+});
